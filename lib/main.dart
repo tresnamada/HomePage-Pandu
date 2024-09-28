@@ -1,4 +1,7 @@
 import 'package:f/homepage.dart';
+import 'package:f/onboarding.dart';
+import 'package:f/permision.dart';
+import 'package:f/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => Homepage(),
+        '/': (context) => Permision(),
       },
       //Search
     );
