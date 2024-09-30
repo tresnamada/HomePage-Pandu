@@ -45,7 +45,8 @@ class Permision extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          SizedBox(height: 12),
         ],
       ),
     );

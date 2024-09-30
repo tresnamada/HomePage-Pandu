@@ -1,7 +1,6 @@
-import 'package:f/homepage.dart';
-import 'package:f/onboarding.dart';
+
 import 'package:f/permision.dart';
-import 'package:f/splash.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
