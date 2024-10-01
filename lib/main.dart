@@ -1,4 +1,5 @@
 import 'package:f/homepage.dart';
+import 'package:f/riwayat.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => Homepage(),
+        '/': (context) => Riwayat(),
       },
-      //Search
     );
   }
 }

@@ -2,8 +2,8 @@
 
 import 'dart:ui';
 
-import 'package:f/artikel.dart';
-import 'package:f/kotakgempa.dart';
+import 'package:f/widgets/artikel.dart';
+import 'package:f/widgets/kotakgempa.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -82,7 +82,7 @@ class Homepage extends StatelessWidget {
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(width: 0, color: Colors.white),
+                        borderSide: BorderSide(width: 0, style: BorderStyle.none),
                       ),
                     ),
                   ),
@@ -285,7 +285,16 @@ class Homepage extends StatelessWidget {
                             height: 290,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
-                              children: [Artikel(), Artikel(), Artikel()],
+                              children: [
+                              Artikel(),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              Artikel(),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              Artikel()],
                             ),
                           )
                         ],
@@ -296,131 +305,220 @@ class Homepage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  width: 382,
-                  height: 201,
-                  decoration: ShapeDecoration(
-                      color: Color(0xFF4EB8FF),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      shadows: [
-                        BoxShadow(
-                          color: Color(0x994FB8FF),
-                          blurRadius: 20,
-                          offset: Offset(0, 4),
-                          spreadRadius: 0,
-                        )
-                      ]),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    child: Stack(
-                      children: [
-                        Row(
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Expanded(
+                    child: Container(
+                      // width: 382,
+                      height: 201,
+                      decoration: ShapeDecoration(
+                          color: Color(0xFF4EB8FF),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          shadows: [
+                            BoxShadow(
+                              color: Color(0x994FB8FF),
+                              blurRadius: 20,
+                              offset: Offset(0, 4),
+                              spreadRadius: 0,
+                            )
+                          ]),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        child: Stack(
                           children: [
-                            Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Informasi Bantuan Gempa',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontFamily: 'Plus Jakarta Sans',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Container(
-                                    width: 210,
-                                    height: 62,
-                                    child: Text(
-                                      'Hubungi BMKG atau BPBD kota Anda untuk mendapatkan bantuan dan informasi yang lebih terperinci',
-                                      style: TextStyle(
-                                        color: Color(0xFFB9E3FF),
-                                        fontSize: 14,
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        fontWeight: FontWeight.w400,
+                            Row(
+                              children: [
+                                Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Informasi Bantuan Gempa',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                       ),
-                                      maxLines: 3,
-                                      overflow: TextOverflow.ellipsis,
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        width: 210,
+                                        height: 62,
+                                        child: Text(
+                                          'Hubungi BMKG atau BPBD kota Anda untuk mendapatkan bantuan dan informasi yang lebih terperinci',
+                                          style: TextStyle(
+                                            color: Color(0xFFB9E3FF),
+                                            fontSize: 14,
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                          maxLines: 3,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 35,
+                                      ),
+                                      Text(
+                                        'Hubungi',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ]),
+                              ],
+                            ),
+                            Positioned(
+                              left: 220,
+                              top: 15,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 142,
+                                    height: 142,
+                                    child: Image.asset(
+                                      "asset/img/bell.png",
+                                      fit: BoxFit.fill,
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 35,
-                                  ),
-                                  Text(
-                                    'Hubungi',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontFamily: 'Plus Jakarta Sans',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ]),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
-                        Positioned(
-                          left: 220,
-                          top: 15,
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 142,
-                                height: 142,
-                                child: Image.asset(
-                                  "asset/img/bell.png",
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(
                   height: 24,
                 ),
-                Row(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 382,
-                          height: 158,
-                          child: Text(
-                            "Menemukan Kesalahan \ndi Aplikasi Pandhu?",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontFamily: 'Plus Jakarta Sans',
-                              fontWeight: FontWeight.w600,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Expanded(
+                    child: Container(
+                      height: 158,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(18, 20, 0, 20),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text.rich(
+                                  TextSpan(
+                                      children: [
+                                          TextSpan(
+                                              text: 'Menemukan Kesalahan \ndi Aplikasi ',
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 20,
+                                                  fontFamily: 'Plus Jakarta Sans',
+                                                  fontWeight: FontWeight.w600,
+                                              ),
+                                          ),
+                                          TextSpan(
+                                              text: 'Pandhu?',
+                                              style: TextStyle(
+                                                  color: Color(0xFFF6643C),
+                                                  fontSize: 20,
+                                                  fontFamily: 'Plus Jakarta Sans',
+                                                  fontWeight: FontWeight.w600,
+                                              ),
+                                          ),
+                                      ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Text.rich(
+                                    TextSpan(
+                                        children: [
+                                            TextSpan(
+                                                text: 'Hubungi tim kami melalui ',
+                                                style: TextStyle(
+                                                    color: Color(0xFF636363),
+                                                    fontSize: 14,
+                                                    fontFamily: 'Plus Jakarta Sans',
+                                                    fontWeight: FontWeight.w400,
+                                                ),
+                                            ),
+                                            TextSpan(
+                                                text: 'email \n',
+                                                style: TextStyle(
+                                                    color: Color(0xFF636363),
+                                                    fontSize: 14,
+                                                    fontStyle: FontStyle.italic,
+                                                    fontFamily: 'Plus Jakarta Sans',
+                                                    fontWeight: FontWeight.w400,
+                                                ),
+                                            ),
+                                            TextSpan(
+                                                text: 'sipanduofficial@gmail.com',
+                                                style: TextStyle(
+                                                    color: Color(0xFF636363),
+                                                    fontSize: 14,
+                                                    fontFamily: 'Plus Jakarta Sans',
+                                                    fontWeight: FontWeight.w400,
+                                                ),
+                                            ),
+                                        ],
+                                    ),
+                                )
+                              ],
                             ),
-                          ),
+                            Image.asset("asset/img/checklist.png"),
+                          ],
                         ),
-                        Text(
-                          "Hubungi tim kami melalui email sipanduofficial@gmail.com",
-                          style: TextStyle(
-                            color: Color(0xFF636363),
-                            fontSize: 14,
-                            fontFamily: 'Plus Jakarta Sans',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        )
-                      ],
+                      ),
                     ),
-                  ],
+                  ),
                 )
               ]),
               SizedBox(
-                height: 200,
+                height: 48,
+              ),
+              Column(
+                children: [
+                  Text(
+                    'Powered by',
+                    style: TextStyle(
+                    color: Color(0xFF666666),
+                    fontSize: 16,
+                    fontFamily: 'Plus Jakarta Sans',
+                    fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("asset/img/google-logo.png"),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Image.asset("asset/img/bmkg-logo.png"),
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 151,
               )
             ],
           ),
@@ -483,11 +581,51 @@ class Homepage extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                              width: 64,
+                              height: 64,
+                              decoration: ShapeDecoration(
+                                color : Color(0xFFF6643C),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                  ),
+                              ),
+                              child: 
+                              Container(
+                                width: 20,
+                                height: 20,
+                                child: Image.asset("asset/img/chat.png",
+                                
+                                )
+                              ),
+                            ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'SiPandhu',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                  color: Color(0xFF666666),
+                  fontSize: 12,
+                  fontFamily: 'Plus Jakarta Sans',
+                  fontWeight: FontWeight.w400,
+                  ),
+                  ),
+                SizedBox(
+                  height: 20,
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
-
-    // ));
   }
 }
